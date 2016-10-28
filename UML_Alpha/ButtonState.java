@@ -1,0 +1,6 @@
+package UML_Alpha;
+
+public enum ButtonState {
+	SELECT, ASSOCIATION_LINE, GENERALIZATION_LINE,
+	COMPOSITION_LINE , CLASS, USE_CASE
+}
