@@ -1,3 +1,4 @@
+
 package UML_Alpha;
 
 
@@ -10,12 +11,12 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-public class basicObject extends JPanel{
+public  class basicObject extends JPanel{
 	protected int xPosition , yPosition;
 	protected int depth;
 	protected int width , height;
 	protected boolean selected = false;
-	protected boolean[] connectedPort=  {false,false,false,false};
+	protected int[] connectedPort;
 	
 	public basicObject()
 	{
@@ -24,6 +25,8 @@ public class basicObject extends JPanel{
 		this.depth = 0;
 		this.width = 120;
 		this.height = 120;
+		connectedPort = new int[8];
+
 		setOpaque(false);
 	}
 	
@@ -34,6 +37,7 @@ public class basicObject extends JPanel{
 		this.depth = nowDepth;
 		this.width = 120;
 		this.height = 120;
+		connectedPort = new int[8];
 		setOpaque(false);
 	}
 	
@@ -44,6 +48,7 @@ public class basicObject extends JPanel{
 		this.depth = nowDepth;
 		this.width = w;
 		this.height = h;
+		connectedPort = new int[8];
 		setOpaque(false);
 	}
 	
@@ -60,7 +65,7 @@ public class basicObject extends JPanel{
 		return this.depth;
 	}
 	
-	public void setDepth(byte depth)
+	public void setDepth(int depth)
 	{
 		this.depth = depth;
 	}
@@ -99,4 +104,32 @@ public class basicObject extends JPanel{
 		else
 			return false;
 	}
+	
+	public int getWidth()
+	{
+		return width;
+	}
+	
+	public int getHeight()
+	{
+		return height;
+	}
+	
+	
+	public int getPortX(int port)
+	{
+		return connectedPort[port];
+	}
+	
+	public int getPortY(int port)
+	{
+		return connectedPort[port+4];
+	}
+	
+	public void portCalculate()
+	{
+		
+	}
+	
+	
 }

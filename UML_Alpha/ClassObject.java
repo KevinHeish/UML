@@ -12,6 +12,7 @@ public class ClassObject extends basicObject{
 		super();
 		width = 80;
 		height = 120;
+		portCalculate();
 	}
 	
 	public ClassObject(int x,int y ,int nowDepth)
@@ -19,11 +20,34 @@ public class ClassObject extends basicObject{
 		super(x,y,nowDepth);
 		width = 80;
 		height = 120;
+		portCalculate();
 	}
 	
 	public ClassObject(int x,int y , int w, int h , int nowDepth)
 	{
 		super(x,y,w,h,nowDepth);
+		portCalculate();
+	}
+	
+	public void portCalculate()
+	{
+		//counterClockwise order
+		
+		//Port 1 : x ,y
+		connectedPort[0] = xPosition + (width / 2);
+		connectedPort[4] = yPosition;
+		
+		//Port 2 : x ,y
+		connectedPort[1] = xPosition + width ;
+		connectedPort[5] = yPosition + height/2;
+		
+		//Port 3 : x ,y
+		connectedPort[2] = xPosition + (width / 2);
+		connectedPort[6] = yPosition+ height;
+		
+		//Port 4 : x ,y
+		connectedPort[3] = xPosition;
+		connectedPort[7] = yPosition + height/2;
 	}
 	
 	@Override
